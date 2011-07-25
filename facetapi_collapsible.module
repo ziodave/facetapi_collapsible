@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * Implements hook_facetapi_widgets().
+ */
+function facetapi_collapsible_facetapi_widgets() {
+  return array(
+    'collapsible' => array(
+      'handler' => array(
+        'label' => t('Collapsible Links'),
+        'class' => 'FacetapiCollapsible',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function facetapi_collapsible_theme_registry_alter(&$theme_registry) {
+  foreach (array('facetapi_title', 'facetapi_link_inactive', 'facetapi_link_active', 'facetapi_count') as $theme_func) {
+    if (!empty($theme_registry[$theme_func])) {
+      $theme_registry[$theme_func]['function'] = 'facetapi_collapsible_'. $theme_func;
+    }
+  }
+}
+
+/**
+ * Themes a facet title.
+ */
+function facetapi_collapsible_facetapi_title($variables) {
+  return drupal_strtolower(check_plain($variables['title']));
+}
+
+/**
+ * Themes a facet link with an optional count.
+ */
+function facetapi_collapsible_facetapi_link_inactive($variables) {
+  $variables['text'] = trim($variables['text'], '"');
+  if (!empty($variables['count'])) {
+    $variables['options']['html'] = TRUE;
+    $variables['text'] .= ' ' . theme('facetapi_count', $variables);
+  }
+  return '<div class="facetapi-facet">'. theme_link($variables) .'</div>';
+}
+
+/**
+ * Themes the count for the facet item.  For example, this number shows how many
+ * results will be returned after clicking on a link.
+ */
+function facetapi_collapsible_facetapi_count($variables) {
+  return '<span class="count">' . check_plain($variables['count']) . '</span>';
+}
+
+/**
+ * Themes a facet link for a value that is currently being searched.
+ */
+function facetapi_collapsible_facetapi_link_active($variables) {
+  $facet_text = '';
+  if (isset($variables['text'])) {
+    if (empty($variables['options']['html'])) {
+     $facet_text = check_plain(trim($variables['text'], '"'));
+    }
+    else {
+      $facet_text  = $variables['text'];
+    }
+  }
+  $variables['text'] = '(-) ';
+  return '<div class="facetapi-facet">' . $facet_text . '<span class="remove">' . theme_link($variables) . '</span></div>';
+}

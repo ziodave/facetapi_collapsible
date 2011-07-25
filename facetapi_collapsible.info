@@ -1,0 +1,7 @@
+name = Facetapi Collapsible Links
+description = Provides a nice collabsible links facet widget.
+dependencies[] = facetapi
+package = Search Toolkit
+core = 7.x
+
+files[] = collapsible_widget.inc

@@ -1,0 +1,68 @@
+/**
+ * Collapsibility. Adapted from the Kumasi theme originally written by Development
+ * Seed.
+ */
+
+.block-facetapi .facetapi-collapsible {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  background:#e8e8e8;
+  border:1px solid #ddd;
+  margin:0px 0px 5px;
+  }
+
+
+.block-facetapi .facetapi-collapsible li {
+  list-style: none;
+  }
+  
+/* IE8 seems to require all of these selectors to be separated out */
+.block-facetapi .facetapi-collapsible li:first-child {
+  border-color:#eee;
+  padding:4px 4px 4px 9px;
+  }
+
+.block-facetapi .facetapi-collapsible li:last-child {
+  border-color:#eee;
+  padding:4px 4px 4px 9px;
+  }
+
+.block-facetapi .facetapi-collapsible li.first,
+.block-facetapi .facetapi-collapsible li.last,
+.block-facetapi .facetapi-collapsible li {
+  border-color:#eee;
+  padding:4px 4px 4px 9px;
+  }
+
+.block-facetapi div.facet-collapsible-wrapper { display:none; }
+
+.block-facetapi .facetapi-facet-active,
+.block-facetapi.expanded div.facet-collapsible-wrapper  { display:block; }
+
+.block-facetapi .facetapi-collapsible .depth-1 { padding-left:10px; }
+.block-facetapi .facetapi-collapsible .depth-2 { padding-left:20px; }
+.block-facetapi .facetapi-collapsible .depth-3 { padding-left:30px; }
+
+.facetapi-collapsible .facetapi-facet {
+  display:block;
+  min-height:20px; /* IE */
+  position:relative;
+  padding-right:30px;
+  }
+
+.facetapi-collapsible .facetapi-facet .remove,
+.facetapi-collapsible .facetapi-facet .count {
+  position:absolute;
+  right:0px;
+  top:0px;
+  margin:0px;
+  }
+
+.facetapi-collapsible .facetapi-facet .count {
+  background:#eef4f8;
+  padding:0px 8px;
+  font-weight:bold;
+  font-size:9px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  }
