@@ -9,30 +9,41 @@
   background:#e8e8e8;
   border:1px solid #ddd;
   margin:0px 0px 5px;
-  }
+  padding: 0 5px 0 10px;
+}
 
 
 .block-facetapi .facetapi-collapsible li {
   list-style: none;
-  }
+}
+
+.block-facetapi .facetapi-collapsible li.last,
+.block-facetapi .facetapi-collapsible li {
+  padding:6px 4px 6px 9px;
+  border-top: 1px solid #DDD;
+}
+
+.block-facetapi .facetapi-collapsible li.first {
+  border-top: none;
+}
   
 /* IE8 seems to require all of these selectors to be separated out */
 .block-facetapi .facetapi-collapsible li:first-child {
-  border-color:#eee;
+  border-color:#ddd;
   padding:4px 4px 4px 9px;
-  }
+}
 
 .block-facetapi .facetapi-collapsible li:last-child {
-  border-color:#eee;
+  border-color:#ddd;
   padding:4px 4px 4px 9px;
-  }
+}
 
 .block-facetapi .facetapi-collapsible li.first,
 .block-facetapi .facetapi-collapsible li.last,
 .block-facetapi .facetapi-collapsible li {
-  border-color:#eee;
+  border-color:#ddd;
   padding:4px 4px 4px 9px;
-  }
+}
 
 .block-facetapi div.facet-collapsible-wrapper { display:none; }
 
@@ -48,7 +59,7 @@
   min-height:20px; /* IE */
   position:relative;
   padding-right:30px;
-  }
+}
 
 .facetapi-collapsible .facetapi-facet .remove,
 .facetapi-collapsible .facetapi-facet .count {
@@ -56,13 +67,31 @@
   right:0px;
   top:0px;
   margin:0px;
-  }
+}
 
 .facetapi-collapsible .facetapi-facet .count {
-  background:#eef4f8;
+  background:#ddd;
   padding:0px 8px;
   font-weight:bold;
   font-size:9px;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
-  }
+}
+
+.facet-collapsible-wrapper .facetapi-limit-link {
+  background: #DDD;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display:block;
+  font-weight: bold;
+  font-size: 10px;
+  margin: 0 5px 5px 10px;
+  padding: 6px 4px 6px 9px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.block-facetapi .facet-collapsible-wrapper .facetapi-limit-link:hover {
+  background-color: #D6D6D6;
+}
