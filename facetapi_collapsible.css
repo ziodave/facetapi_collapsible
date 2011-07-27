@@ -4,8 +4,9 @@
  */
 
 .block-facetapi .facetapi-collapsible {
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   background:#e8e8e8;
   border:1px solid #ddd;
   margin:0px 0px 5px;
@@ -69,13 +70,26 @@
   margin:0px;
 }
 
+.block-facetapi .facet-collapsible-wrapper .facetapi-facet .remove a {
+  background:transparent url('facet-closer.png') no-repeat scroll 0 -18px;
+  display:block;
+  float: right;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width:21px;
+  text-indent: -9999px;
+}
+
 .facetapi-collapsible .facetapi-facet .count {
-  background:#ddd;
+  background-color:#ddd;
   padding:0px 8px;
   font-weight:bold;
   font-size:9px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 .facet-collapsible-wrapper .facetapi-limit-link {
