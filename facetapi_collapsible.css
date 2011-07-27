@@ -76,10 +76,15 @@
   float: right;
   height: 18px;
   position: absolute;
+  overflow: hidden;
   right: 0;
   top: 50%;
   width:21px;
   text-indent: -9999px;
+}
+
+.block-facetapi .facet-collapsible-wrapper .facetapi-facet .remove a:hover {
+  background-position: 0 0;
 }
 
 .facetapi-collapsible .facetapi-facet .count {
