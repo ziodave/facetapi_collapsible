@@ -3,7 +3,7 @@
  * Seed.
  */
 
-.block-facetapi .facetapi-collapsible {
+ul.facetapi-collapsible {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -14,55 +14,55 @@
 }
 
 
-.block-facetapi .facetapi-collapsible li {
+ul.facetapi-collapsible li {
   list-style: none;
 }
 
-.block-facetapi .facetapi-collapsible li.last,
-.block-facetapi .facetapi-collapsible li {
+ul.facetapi-collapsible li.last,
+ul.facetapi-collapsible li {
   padding:6px 4px 6px 9px;
   border-top: 1px solid #DDD;
 }
 
-.block-facetapi .facetapi-collapsible li.first {
+ul.facetapi-collapsible li.first {
   border-top: none;
 }
   
 /* IE8 seems to require all of these selectors to be separated out */
-.block-facetapi .facetapi-collapsible li:first-child {
+ul.facetapi-collapsible li:first-child {
   border-color:#ddd;
   padding:4px 4px 4px 9px;
 }
 
-.block-facetapi .facetapi-collapsible li:last-child {
+ul.facetapi-collapsible li:last-child {
   border-color:#ddd;
   padding:4px 4px 4px 9px;
 }
 
-.block-facetapi .facetapi-collapsible li.first,
-.block-facetapi .facetapi-collapsible li.last,
-.block-facetapi .facetapi-collapsible li {
+ul.facetapi-collapsible li.first,
+ul.facetapi-collapsible li.last,
+ul.facetapi-collapsible li {
   border-color:#ddd;
   padding:4px 4px 4px 9px;
 }
 
-.block-facetapi div.facet-collapsible-wrapper { display:none; }
+div.facetapi-collapsible div.facet-collapsible-wrapper { display:none; }
 
-.block-facetapi .facetapi-facet-active,
-.block-facetapi.expanded div.facet-collapsible-wrapper  { display:block; }
+div.facetapi-collapsible .facetapi-facet-active,
+div.facetapi-collapsible.expanded div.facet-collapsible-wrapper  { display:block; }
 
-.block-facetapi .facetapi-collapsible .depth-1 { padding-left:10px; }
-.block-facetapi .facetapi-collapsible .depth-2 { padding-left:20px; }
-.block-facetapi .facetapi-collapsible .depth-3 { padding-left:30px; }
+div.facetapi-collapsible ul.facetapi-collapsible .depth-1 { padding-left:10px; }
+div.facetapi-collapsible ul.facetapi-collapsible .depth-2 { padding-left:20px; }
+div.facetapi-collapsible ul.facetapi-collapsible .depth-3 { padding-left:30px; }
 
-.facetapi-collapsible .facetapi-facet {
+ul.facetapi-collapsible .facetapi-facet {
   display:block;
   min-height:20px; /* IE */
   position:relative;
   padding-right:30px;
 }
 
-.block-facetapi .block-title .facetapi-facet-title {
+div.facetapi-collapsible .block-title .facetapi-facet-title {
   background: transparent url('facet-collapse-icon.png') no-repeat 0 0;
   display: block;
   height: 18px;
@@ -72,19 +72,19 @@
   width: 21px;
 }
 
-.block-facetapi.expanded .block-title .facetapi-facet-title {
+div.facetapi-collapsible.expanded .block-title .facetapi-facet-title {
   background-position:0 -18px;
 }
 
-.facetapi-collapsible .facetapi-facet .remove,
-.facetapi-collapsible .facetapi-facet .count {
+ul.facetapi-collapsible .facetapi-facet .remove,
+ul.facetapi-collapsible .facetapi-facet .count {
   position:absolute;
   right:0px;
   top:0px;
   margin:0px;
 }
 
-.block-facetapi .facet-collapsible-wrapper .facetapi-facet .remove a {
+div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a {
   background:transparent url('facet-closer.png') no-repeat scroll 0 -18px;
   display:block;
   float: right;
@@ -97,11 +97,11 @@
   text-indent: -9999px;
 }
 
-.block-facetapi .facet-collapsible-wrapper .facetapi-facet .remove a:hover {
+div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a:hover {
   background-position: 0 0;
 }
 
-.facetapi-collapsible .facetapi-facet .count {
+ul.facetapi-collapsible .facetapi-facet .count {
   background-color:#ddd;
   padding:0px 8px;
   font-weight:bold;
