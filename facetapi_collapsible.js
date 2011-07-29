@@ -5,8 +5,12 @@
  */
 Drupal.behaviors.facetapiCollapsible = {
   attach : function(context) {
+    $('.facetapi-collapsible')
+      .parents('.block-facetapi')
+      .addClass('collapsed');
+    
     var first = $('.facetapi-collapsible').get(0);
-    $(first).parents('.block-facetapi').addClass('expanded');
+    $(first).parents('.block-facetapi').addClass('expanded').removeClass('collapsed');
 
     $('.facetapi-collapsible').parents('.block-facetapi').once(function() {
       var facet = $(this);
@@ -23,11 +27,11 @@ Drupal.behaviors.facetapiCollapsible = {
                 facetId = facetId.replace('facet-collapsible-', '');
                 facetId = facetId.replace(/-/g, '_');
                 if (Drupal.settings.facetapi_collapsible[facetId] && !Drupal.settings.facetapi_collapsible[facetId].keep_open) {
-                  $(this).removeClass('expanded');
+                  $(this).removeClass('expanded').addClass('collapsed');
                 }
               }
             });
-            facet.toggleClass('expanded');
+            facet.toggleClass('expanded').toggleClass('collapsed');
           });
         });
       }
