@@ -87,13 +87,8 @@ ul.facetapi-collapsible .facetapi-facet .count {
 div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove,
 div.contextual-links-region .facetapi-facet .remove {
   background:transparent url('facet-selected.png') no-repeat scroll 0 -18px;
-  display:block;
-  float: right;
   height: 18px;
-  position: absolute;
   overflow: hidden;
-  right: 0;
-  top: 50%;
   width:21px;
   text-indent: -9999px;
   padding-right: 5px;
@@ -103,7 +98,7 @@ div.contextual-links-region .facetapi-facet .remove a {
   position: relative;
 }
 
-div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a:hover {
+div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .facetapi-active:hover .remove {
   background:transparent url('facet-closer.png') no-repeat scroll 0 -18px;
   background-position: 0 0;
 }
