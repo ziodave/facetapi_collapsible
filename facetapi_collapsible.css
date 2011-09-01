@@ -84,8 +84,8 @@ ul.facetapi-collapsible .facetapi-facet .count {
   margin:0px;
 }
 
-div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a,
-div.contextual-links-region .facetapi-facet .remove a {
+div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove,
+div.contextual-links-region .facetapi-facet .remove {
   background:transparent url('facet-selected.png') no-repeat scroll 0 -18px;
   display:block;
   float: right;
