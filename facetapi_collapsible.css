@@ -84,8 +84,9 @@ ul.facetapi-collapsible .facetapi-facet .count {
   margin:0px;
 }
 
-div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a {
-  background:transparent url('facet-closer.png') no-repeat scroll 0 -18px;
+div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a,
+div.contextual-links-region .facetapi-facet .remove a {
+  background:transparent url('facet-selected.png') no-repeat scroll 0 -18px;
   display:block;
   float: right;
   height: 18px;
@@ -95,9 +96,15 @@ div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a {
   top: 50%;
   width:21px;
   text-indent: -9999px;
+  padding-right: 5px;
+}
+
+div.contextual-links-region .facetapi-facet .remove a {
+  position: relative;
 }
 
 div.facetapi-collapsible .facet-collapsible-wrapper .facetapi-facet .remove a:hover {
+  background:transparent url('facet-closer.png') no-repeat scroll 0 -18px;
   background-position: 0 0;
 }
 

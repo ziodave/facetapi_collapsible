@@ -65,8 +65,8 @@ function facetapi_collapsible_facetapi_link_active($variables) {
       $facet_text  = $variables['text'];
     }
   }
-  $variables['text'] = '(-) ';
-  return '<div class="facetapi-facet">' . $facet_text . '<span class="remove">' . theme_link($variables) . '</span></div>';
+  $variables['text'] = '(-)';
+  return '<div class="facetapi-facet">' . $facet_text . '<span class="remove"> ' . theme_link($variables) . '</span></div>';
 }
 
 /**
