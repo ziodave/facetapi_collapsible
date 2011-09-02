@@ -41,7 +41,7 @@ function facetapi_collapsible_facetapi_link_inactive($variables) {
     $variables['options']['html'] = TRUE;
     $variables['text'] .= ' ' . theme('facetapi_count', $variables);
   }
-  return '<div class="facetapi-facet facet-inactive">'. theme_link($variables) .'</div>';
+  return '<div class="facetapi-facet facetapi-inactive">'. theme_link($variables) .'</div>';
 }
 
 /**
@@ -68,7 +68,7 @@ function facetapi_collapsible_facetapi_link_active($variables) {
   $variables['text'] = $facet_text . '<span class="remove">(-)</span>';
   $variables['options']['html'] = TRUE;
 
-  return '<div class="facetapi-facet facet-active">' . theme_link($variables) . '</div>';
+  return '<div class="facetapi-facet facetapi-active">' . theme_link($variables) . '</div>';
 }
 
 /**
