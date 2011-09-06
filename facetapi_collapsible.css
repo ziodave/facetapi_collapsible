@@ -34,18 +34,20 @@ div.facetapi-collapsible ul.facetapi-collapsible .depth-3 { padding-left: 30px; 
 
 div.facetapi-collapsible h2, /* block title */
 div.facetapi-collapsible .block-title {
-  background: transparent url('facet-collapse-icon.png') no-repeat right top;
+  background: transparent url('images/expand.png') no-repeat right top;
+  min-height: 22px;
+}
+
+div.facetapi-collapsible.expanded h2, /* block title */
+div.facetapi-collapsible.expanded .block-title {
+  background-image: url('images/collapse.png');
 }
 
 div.facetapi-collapsible h2:hover, /* block title */
 div.facetapi-collapsible .block-title:hover {
   color: #000;
   cursor: pointer;
-}
-
-div.facetapi-collapsible.expanded h2, /* block title */
-div.facetapi-collapsible.expanded .block-title {
-  background-position: right bottom;
+  text-decoration: underline;
 }
 
 div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a {
@@ -100,8 +102,12 @@ div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a .count {
 }
 
 div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a .remove {
-  background:transparent url('facet-selected.png') no-repeat scroll 0 0;
+  background: transparent url('images/selected.png') no-repeat scroll 0 0;
   height: 18px;
   text-indent: -9999px;
-  width: 21px;
+  width: 22px;
+}
+
+div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a:hover .remove {
+  background: url('images/close.png');
 }
