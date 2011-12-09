@@ -34,8 +34,9 @@ div.facetapi-collapsible ul.facetapi-collapsible .depth-3 { padding-left: 30px; 
 
 div.facetapi-collapsible h2, /* block title */
 div.facetapi-collapsible .block-title {
-  background: transparent url('images/expand.png') no-repeat right top;
-  min-height: 22px;
+  background: transparent url('images/expand.png') no-repeat right center;
+  min-height: 18px;
+  padding-right: 25px;
 }
 
 div.facetapi-collapsible.expanded h2, /* block title */
