@@ -9,6 +9,7 @@ function facetapi_collapsible_facetapi_widgets() {
       'handler' => array(
         'label' => t('Collapsible Links'),
         'class' => 'FacetapiCollapsible',
+        'query types' => array('term', 'date'),
       ),
     ),
   );
