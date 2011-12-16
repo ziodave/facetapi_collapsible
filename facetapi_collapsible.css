@@ -1,17 +1,75 @@
 /**
  * This style has been created using the default Drupal theme Bartik as base.
  */
+.facetapi-collapsible > h2 {
+  background: url(images/expand.png) no-repeat right center;
+}
 
-.facet-collapsible-wrapper ul.facetapi-collapsible {
+.facetapi-collapsible.expanded > h2 {
+  background: url(images/collapse.png) no-repeat right center;
+}
+
+.facetapi-collapsible > .content {
+  display: none;
+}
+
+.facetapi-collapsible.expanded > .content {
+  display: block;
+}
+
+.facetapi-collapsible ul.facetapi-collapsible {
+  background: none;
+  margin: 0;
   padding: 0;
 }
 
-ul.facetapi-collapsible li,
-ul.facetapi-collapsible li.leaf {
+.facetapi-collapsible ul.facetapi-collapsible li,
+.facetapi-collapsible ul.facetapi-collapsible li.leaf {
   background: #ECECE6;
   border: 1px solid #D6D6D6;
   line-height: 1.2em;
   list-style: none outside none;
-  margin: 0 0 8px 0;
-  padding: 3px 5px 4px 5px;
+  margin: 0 0 5px 0;
+  padding: 0;
 }
+
+ul.facetapi-collapsible li a {
+  display: block;
+  padding-right: 25px;
+  padding: 3px 20px 3px 5px;
+  position: relative;
+}
+
+ul.facetapi-collapsible li a:hover {
+  background-color: #D6D6D6;
+  text-decoration: none;
+}
+
+ul.facetapi-collapsible li a span {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+}
+
+.facetapi-collapsible ul.facetapi-collapsible li.expanded ul {
+  border-top: 1px solid #D6D6D6;
+  margin: 0 3px 5px 3px;
+  padding: 5px 0 0 0;
+}
+
+.facetapi-collapsible ul.facetapi-collapsible li.expanded ul li {
+  border-left: 0 none;
+  border-right: 0 none;
+  border-top: 0 none;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.facetapi-collapsible ul.facetapi-collapsible li.expanded ul li.last {
+  border-bottom: 0 none;
+}
+
+.facetapi-collapsible ul.facetapi-collapsible li.expanded ul li a span {
+  right: 3px;
+}
+
