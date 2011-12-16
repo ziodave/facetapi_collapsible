@@ -1,114 +1,17 @@
+/**
+ * This style has been created using the default Drupal theme Bartik as base.
+ */
+
 .facet-collapsible-wrapper ul.facetapi-collapsible {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  background: #e8e8e8;
-  border: 1px solid #ddd;
-  margin: 0px 0px 5px;
-  padding: 0 5px 0 10px;
+  padding: 0;
 }
 
-.facet-collapsible-wrapper ul.facetapi-collapsible li {
-  border-bottom: 1px solid #DDD;
+ul.facetapi-collapsible li,
+ul.facetapi-collapsible li.leaf {
+  background: #ECECE6;
+  border: 1px solid #D6D6D6;
+  line-height: 1.2em;
   list-style: none outside none;
-  margin: 0;
-  padding: 6px 0px;
-}
-
-.facet-collapsible-wrapper ul.facetapi-collapsible li.last {
-  border-bottom: 0 none;
-}
-
-div.facetapi-collapsible div.facet-collapsible-wrapper {
-  display: none; /* why do we hide it? It's getting display in the next selector */
-}
-
-div.facetapi-collapsible .facetapi-facet-active,
-div.facetapi-collapsible.expanded div.facet-collapsible-wrapper  {
-  display: block;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .depth-1 { padding-left: 10px; }
-div.facetapi-collapsible ul.facetapi-collapsible .depth-2 { padding-left: 20px; }
-div.facetapi-collapsible ul.facetapi-collapsible .depth-3 { padding-left: 30px; }
-
-div.facetapi-collapsible h2, /* block title */
-div.facetapi-collapsible .block-title {
-  background: transparent url('images/expand.png') no-repeat right center;
-  min-height: 18px;
-  padding-right: 25px;
-}
-
-div.facetapi-collapsible.expanded h2, /* block title */
-div.facetapi-collapsible.expanded .block-title {
-  background-image: url('images/collapse.png');
-}
-
-div.facetapi-collapsible h2:hover, /* block title */
-div.facetapi-collapsible .block-title:hover {
-  color: #000;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a {
-  color: #333;
-  display: block;
-  padding-right: 30px;
-  position: relative;
-  padding-left: 5px;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a:hover {
-  background: #DDD;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  color: #333;
-  text-decoration: none;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible a.facetapi-active {
-  background: #BBB;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  color: #FFF;
-  padding-top: 1px;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible a.facetapi-active:hover {
-  background: #AAA;
-  color: #FFF;
-  text-decoration: none;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a .count,
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a .remove {
-  display: block;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a .count {
-  background-color: #DDD;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  font-weight: bold;
-  font-size: 9px;
-  padding: 0px 8px 3px 8px;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a .remove {
-  background: transparent url('images/selected.png') no-repeat scroll 0 0;
-  height: 18px;
-  text-indent: -9999px;
-  width: 22px;
-}
-
-div.facetapi-collapsible ul.facetapi-collapsible .facetapi-facet a:hover .remove {
-  background: url('images/close.png');
+  margin: 0 0 8px 0;
+  padding: 3px 5px 4px 5px;
 }
