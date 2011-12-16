@@ -45,6 +45,15 @@ ul.facetapi-collapsible li a:hover {
   text-decoration: none;
 }
 
+ul.facetapi-collapsible li a.facetapi-active {
+  background-color: #48A9E4;
+  color: #ECECE6;
+}
+
+ul.facetapi-collapsible li a.facetapi-active:hover {
+  background-color: #018FE2;
+}
+
 ul.facetapi-collapsible li a span {
   position: absolute;
   right: 5px;
