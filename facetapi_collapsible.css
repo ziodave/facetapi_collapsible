@@ -1,19 +1,19 @@
 /**
  * This style has been created using the default Drupal theme Bartik as base.
  */
-.facetapi-collapsible > h2 {
+.facetapi-collapsible h2 {
   background: url(images/expand.png) no-repeat right center;
 }
 
-.facetapi-collapsible.expanded > h2 {
+.facetapi-collapsible.expanded h2 {
   background: url(images/collapse.png) no-repeat right center;
 }
 
-.facetapi-collapsible > .content {
+.facetapi-collapsible .content {
   display: none;
 }
 
-.facetapi-collapsible.expanded > .content {
+.facetapi-collapsible.expanded .content {
   display: block;
 }
 

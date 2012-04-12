@@ -29,7 +29,7 @@ var facetCollapseExpanded = function($facet, condition, operation, behavior) {
 Drupal.behaviors.facetapiCollapsible = {
   attach : function(context) {
     var i = 0;
-    $('div.facetapi-collapsible').once(function() {
+    $('.facetapi-collapsible').once(function() {
       var $facet = $(this);
       if ($('.facetapi-active', this).size() > 0) {
         $(this).addClass('expanded active');
