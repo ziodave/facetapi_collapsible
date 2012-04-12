@@ -51,6 +51,80 @@ Drupal.behaviors.facetapiCollapsible = {
           });
         });
       }
+      //check cookie
+      var cookie = $.cookie('Facetapi.collapsible.expanded');
+      cookie = $.parseJSON(cookie);
+      if (!cookie) {
+        cookie = {}
+      }
+      $('.facetapi-collapsible ul.facetapi-collapsible .item-list').once(function() {
+        var $list = $(this);
+        var parentwrapper = $list.closest('.facet-collapsible-wrapper')
+        if (parentwrapper) {
+          var parentfacetId = parentwrapper.attr('id');
+          parentfacetId = parentfacetId.replace('facet-collapsible-', '');
+          parentfacetId = parentfacetId.replace(/-/g, '_');
+          if (Drupal.settings.facetapi_collapsible[parentfacetId] && Drupal.settings.facetapi_collapsible[parentfacetId].collapsible_children) {
+            var $parentfacet = $($list.siblings('.facetapi-facet').get(0));
+            
+            $('a', $parentfacet).each(function() {
+              if (!cookie || !cookie[parentfacetId] || (cookie[parentfacetId].indexOf($(this).attr('href')) < 0)) {
+                $(this).html('<span class="facetapi-collapsible-handle">+&nbsp;</span>' + $(this).html());
+                $('ul', $(this).closest('.facetapi-facet').siblings('.item-list')).first().removeClass('expanded');
+              }
+              else {
+                $(this).html('<span class="facetapi-collapsible-handle">-&nbsp;</span>' + $(this).html());
+              }
+            }).addClass('collapselink');
+
+            $('a .facetapi-collapsible-handle', $parentfacet).click(function (event) {
+              var $clickedlist = $('ul', $parentfacet.siblings('.item-list')).first();
+              var $clickedlink = $(this).closest('a');
+              $clickedlist.toggleClass("expanded");
+              if (!cookie) {
+                cookie = {};
+              }
+              if (!cookie[parentfacetId]) {
+                cookie[parentfacetId] = new Array();
+              }
+              if ($clickedlist.hasClass('expanded')) {
+                $(this).html('-&nbsp;');
+                cookie[parentfacetId].push($clickedlink.attr('href'));
+              }
+              else {
+                $(this).html('+&nbsp;');
+                var index = cookie[parentfacetId].indexOf($clickedlink.attr('href'));
+                if (index != -1) {
+                  cookie[parentfacetId].splice(index, 1);
+                }
+              }
+
+
+              if (Drupal.settings.facetapi_collapsible[parentfacetId].keep_open == false) {
+                $('ul', $list.closest('li').siblings('li')).each(function() {
+                  $(this).removeClass("expanded");
+                  $('a .facetapi-collapsible-handle', $(this).closest('li')).html('+&nbsp;');
+                  var index = cookie[parentfacetId].indexOf($('a', $(this).closest('li')).attr('href'));
+                  if (index != -1) {
+                    cookie[parentfacetId].splice(index, 1);
+                  }
+                });
+              }
+              console.log(cookie);
+              console.log(JSON.stringify(cookie));
+              $.cookie(
+                'Facetapi.collapsible.expanded',
+                JSON.stringify(cookie),
+                {
+                  path: Drupal.settings.basePath,
+                  expires: 1
+                }
+              );
+              event.preventDefault();
+            });
+          }
+        }
+      });
       i++;
     });
   }

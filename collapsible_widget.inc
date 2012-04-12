@@ -20,6 +20,7 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
     $settings = $this->settings->settings;
     $keep_open = isset($settings['keep_open']) ? $settings['keep_open'] : 0;
     $expand_first = isset($settings['expand_first']) ? $settings['expand_first'] : 1;
+    $collapsible_children = isset($settings['collapsible_children']) ? $settings['collapsible_children'] : 0;
     $element = array(
       '#theme' => 'item_list',
       '#items' => $this->buildListItems($element),
@@ -34,7 +35,8 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
               'facetapi_collapsible' => array(
                 $this->facet['field alias'] => array(
                   'keep_open' => $keep_open,
-                  'expand_first' => $expand_first))), 'type' => 'setting'),
+                  'expand_first' => $expand_first,
+                  'collapsible_children' => $collapsible_children))), 'type' => 'setting'),
           ),
         'css' => array(drupal_get_path('module', 'facetapi_collapsible') .'/facetapi_collapsible.css'),
       ),
@@ -69,7 +71,18 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
             'select[name="widget"]' => array('value' => $this->id),
           ),
         ),
-      )
+      ),
+      'collapsible_children' => array(
+        '#type' => 'checkbox',
+        '#title' => t('Collapsible children'),
+        '#default_value' => isset($settings['collapsible_children']) ? $settings['collapsible_children'] : 0,
+        '#description' => t('If checked, this facet\'s children will be collapsible as well.'),
+        '#states' => array(
+          'visible' => array(
+            'select[name="widget"]' => array('value' => $this->id),
+          ),
+        ),
+      ),
     );
   }
 }
