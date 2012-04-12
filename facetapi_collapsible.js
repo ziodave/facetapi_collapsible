@@ -51,7 +51,8 @@ Drupal.behaviors.facetapiCollapsible = {
           });
         });
       }
-      //check cookie
+
+      // check cookie
       var cookie = $.cookie('Facetapi.collapsible.expanded');
       cookie = $.parseJSON(cookie);
       if (!cookie) {
@@ -66,16 +67,21 @@ Drupal.behaviors.facetapiCollapsible = {
           parentfacetId = parentfacetId.replace(/-/g, '_');
           if (Drupal.settings.facetapi_collapsible[parentfacetId] && Drupal.settings.facetapi_collapsible[parentfacetId].collapsible_children) {
             var $parentfacet = $($list.siblings('.facetapi-facet').get(0));
-            
+
             $('a', $parentfacet).each(function() {
               if (!cookie || !cookie[parentfacetId] || (cookie[parentfacetId].indexOf($(this).attr('href')) < 0)) {
-                $(this).html('<span class="facetapi-collapsible-handle">+&nbsp;</span>' + $(this).html());
+                $(this).html('<span class="facetapi-collapsible-handle">+</span>&nbsp;' + $(this).html());
                 $('ul', $(this).closest('.facetapi-facet').siblings('.item-list')).first().removeClass('expanded');
               }
               else {
-                $(this).html('<span class="facetapi-collapsible-handle">-&nbsp;</span>' + $(this).html());
+                $(this).html('<span class="facetapi-collapsible-handle">-</span>&nbsp;' + $(this).html());
               }
             }).addClass('collapselink');
+
+            // expand facet with active childs
+            if ($('a.facetapi-active', $(this)).length) {
+              $('ul', $(this).closest('div')).first().addClass('expanded');
+            }
 
             $('a .facetapi-collapsible-handle', $parentfacet).click(function (event) {
               var $clickedlist = $('ul', $parentfacet.siblings('.item-list')).first();
@@ -99,7 +105,6 @@ Drupal.behaviors.facetapiCollapsible = {
                 }
               }
 
-
               if (Drupal.settings.facetapi_collapsible[parentfacetId].keep_open == false) {
                 $('ul', $list.closest('li').siblings('li')).each(function() {
                   $(this).removeClass("expanded");
@@ -110,8 +115,6 @@ Drupal.behaviors.facetapiCollapsible = {
                   }
                 });
               }
-              console.log(cookie);
-              console.log(JSON.stringify(cookie));
               $.cookie(
                 'Facetapi.collapsible.expanded',
                 JSON.stringify(cookie),
