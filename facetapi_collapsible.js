@@ -75,6 +75,7 @@ Drupal.behaviors.facetapiCollapsible = {
               }
               else {
                 $(this).html('<span class="facetapi-collapsible-handle">-</span>&nbsp;' + $(this).html());
+                $(this).closest('.block-facetapi.facetapi-collapsible').addClass('expanded');
               }
             }).addClass('collapselink');
 
