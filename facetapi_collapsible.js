@@ -95,11 +95,11 @@ Drupal.behaviors.facetapiCollapsible = {
                 cookie[parentfacetId] = new Array();
               }
               if ($clickedlist.hasClass('expanded')) {
-                $(this).html('-&nbsp;');
+                $(this).html('-');
                 cookie[parentfacetId].push($clickedlink.attr('href'));
               }
               else {
-                $(this).html('+&nbsp;');
+                $(this).html('+');
                 var index = cookie[parentfacetId].indexOf($clickedlink.attr('href'));
                 if (index != -1) {
                   cookie[parentfacetId].splice(index, 1);
@@ -109,7 +109,7 @@ Drupal.behaviors.facetapiCollapsible = {
               if (Drupal.settings.facetapi_collapsible[parentfacetId].keep_open == false) {
                 $('ul', $list.closest('li').siblings('li')).each(function() {
                   $(this).removeClass("expanded");
-                  $('a .facetapi-collapsible-handle', $(this).closest('li')).html('+&nbsp;');
+                  $('a .facetapi-collapsible-handle', $(this).closest('li')).html('+');
                   var index = cookie[parentfacetId].indexOf($('a', $(this).closest('li')).attr('href'));
                   if (index != -1) {
                     cookie[parentfacetId].splice(index, 1);
