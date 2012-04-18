@@ -39,7 +39,7 @@
         else {
           if (i === 0) {
             // Add the 'expanded' class to the first facet if configured to do so.
-            facetCollapseExpanded($facet, 'expand_first', true, 'addClass');
+            facetCollapseExpanded($facet, 'expand_first', 1, 'addClass');
           }
 
           $('h2', this).each(function () {
@@ -47,7 +47,7 @@
               $facet.siblings('.facetapi-collapsible:not(.active)').each(function () {
                 // Remove the 'expanded' class from all other facets that haven't
                 // been configured to stay open.
-                facetCollapseExpanded($(this), 'keep_open', false, 'removeClass');
+                facetCollapseExpanded($(this), 'keep_open', 0, 'removeClass');
               });
               $facet.toggleClass('expanded');
             });
