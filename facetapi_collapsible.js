@@ -37,10 +37,8 @@
           $(this).addClass('expanded active');
         }
         else {
-          if (i === 0) {
-            // Add the 'expanded' class to the first facet if configured to do so.
-            facetCollapseExpanded($facet, 'expand_first', 1, 'addClass');
-          }
+          // Add the 'expanded' class to the facet if configured to do so.
+          facetCollapseExpanded($facet, 'expand', 1, 'addClass');
 
           $('h2', this).each(function () {
             $(this).click(function () {

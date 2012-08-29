@@ -19,7 +19,7 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
     $this->setThemeHooks($element);
     $settings = $this->settings->settings;
     $keep_open = isset($settings['keep_open']) ? $settings['keep_open'] : 0;
-    $expand_first = isset($settings['expand_first']) ? $settings['expand_first'] : 1;
+    $expand = isset($settings['expand']) ? $settings['expand'] : 1;
     $collapsible_children = isset($settings['collapsible_children']) ? $settings['collapsible_children'] : 0;
     $element = array(
       '#theme' => 'item_list',
@@ -35,7 +35,7 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
               'facetapi_collapsible' => array(
                 $this->facet['field alias'] => array(
                   'keep_open' => $keep_open,
-                  'expand_first' => $expand_first,
+                  'expand' => $expand,
                   'collapsible_children' => $collapsible_children))), 'type' => 'setting'),
           ),
         'css' => array(drupal_get_path('module', 'facetapi_collapsible') .'/facetapi_collapsible.css'),
@@ -61,11 +61,11 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
           ),
         ),
       ),
-      'expand_first' => array(
+      'expand' => array(
         '#type' => 'checkbox',
         '#title' => t('Expand'),
-        '#default_value' => isset($settings['expand_first']) ? $settings['expand_first'] : 1,
-        '#description' => t('If checked, this facet will automatically expand if it is the first on the page.'),
+        '#default_value' => isset($settings['expand']) ? $settings['expand'] : 1,
+        '#description' => t('If checked, this facet will automatically expand.'),
         '#states' => array(
           'visible' => array(
             'select[name="widget"]' => array('value' => $this->id),
