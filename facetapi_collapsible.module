@@ -19,8 +19,11 @@ function facetapi_collapsible_facetapi_widgets() {
  * Implements hook_theme_registry_alter().
  */
 function facetapi_collapsible_theme_registry_alter(&$theme_registry) {
+  $path = drupal_get_path('module', 'facetapi');
   foreach (array('facetapi_title', 'facetapi_link_inactive', 'facetapi_link_active', 'facetapi_count') as $theme_func) {
-    if (!empty($theme_registry[$theme_func])) {
+    // Only change the theme function if the original facetapi implementation is
+    // active. Otherwise theme overrides do not work.
+    if (!empty($theme_registry[$theme_func]) && $theme_registry[$theme_func]['theme path'] == $path) {
       $theme_registry[$theme_func]['function'] = 'facetapi_collapsible_'. $theme_func;
     }
   }
