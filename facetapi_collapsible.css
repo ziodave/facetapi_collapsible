@@ -1,96 +1,48 @@
 /**
- * This style has been created using the default Drupal theme Bartik as base.
+ * FacetAPI Collapsible structural styles.
+ * @todo: Move the display properties into JS. Initially hiding facets
+ * with CSS can cause the content to not show if JS is disabled or has
+ * stopped working because of a parsing error.
  */
+
 .facetapi-collapsible h2 {
   background: url(images/expand.png) no-repeat right center;
 }
-
 .facetapi-collapsible.expanded h2 {
   background: url(images/collapse.png) no-repeat right center;
 }
-
-.facetapi-collapsible .content {
+.block.facetapi-collapsible .facet-collapsible-wrapper {
   display: none;
 }
-
-.facetapi-collapsible.expanded .content {
+.block.facetapi-collapsible.expanded .facet-collapsible-wrapper {
   display: block;
 }
-
-.facetapi-collapsible ul.facetapi-collapsible {
-  background: none;
-  margin: 0;
-  padding: 0;
-}
-
-.facetapi-collapsible ul.facetapi-collapsible li,
-.facetapi-collapsible ul.facetapi-collapsible li.leaf {
-  background: #ECECE6;
-  border: 1px solid #D6D6D6;
-  line-height: 1.2em;
-  list-style: none outside none;
-  margin: 0 0 5px 0;
-  padding: 0;
-}
-
-ul.facetapi-collapsible li a {
-  display: block;
-  padding-right: 25px;
-  padding: 3px 20px 3px 5px;
-  position: relative;
-}
-
-ul.facetapi-collapsible li a:hover {
-  background-color: #D6D6D6;
-  text-decoration: none;
-}
-
-ul.facetapi-collapsible li a.facetapi-active {
-  background-color: #48A9E4;
-  color: #ECECE6;
-}
-
-ul.facetapi-collapsible li a.facetapi-active:hover {
-  background-color: #018FE2;
-}
-
-ul.facetapi-collapsible li a span.count {
-  position: absolute;
-  right: 5px;
-  top: 3px;
-}
-
-.facetapi-collapsible ul.facetapi-collapsible li.expanded ul {
-  border-top: 1px solid #D6D6D6;
-  margin: 0 3px 5px 3px;
-  padding: 5px 0 0 0;
-}
-
-.facetapi-collapsible ul.facetapi-collapsible li.expanded ul li {
-  border-left: 0 none;
-  border-right: 0 none;
-  border-top: 0 none;
-  margin-bottom: 0;
-  margin-left: 5px;
-}
-
-.facetapi-collapsible ul.facetapi-collapsible li.expanded ul li.last {
-  border-bottom: 0 none;
-}
-
-.facetapi-collapsible ul.facetapi-collapsible li.expanded ul li a span {
-  right: 3px;
-}
-
-.facetapi-collapsible ul.facetapi-collapsible ul {
+.block.facetapi-collapsible ul.facetapi-collapsible ul {
   display:none;
 }
-
-.facetapi-collapsible ul.facetapi-collapsible ul.expanded {
+.block.facetapi-collapsible ul.facetapi-collapsible ul.expanded {
   display:block
 }
-
-a.collapselink {
-  font-weight:bold;
+/**
+ * FacetAPI Collapsible Block Titles & Toggle
+ */
+.block.facetapi-collapsible h2.block-title {
+  cursor: pointer;
 }
-
+.block.facetapi-collapsible h2.block-title .toggle {
+  background: url(images/expand.png) no-repeat 0 0 transparent;
+  display: block;
+  float: right;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
+.block.facetapi-collapsible.expanded h2.block-title .toggle {
+  background-image: url(images/collapse.png);
+}
+.block.facetapi-collapsible.expanded.active h2.block-title {
+  cursor: default;
+}
+.block.facetapi-collapsible.expanded.active h2.block-title .toggle {
+  display: none;
+}
