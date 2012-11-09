@@ -5,12 +5,6 @@
  * stopped working because of a parsing error.
  */
 
-.facetapi-collapsible h2 {
-  background: url(images/expand.png) no-repeat right center;
-}
-.facetapi-collapsible.expanded h2 {
-  background: url(images/collapse.png) no-repeat right center;
-}
 .block.facetapi-collapsible .facet-collapsible-wrapper {
   display: none;
 }

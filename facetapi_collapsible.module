@@ -19,60 +19,34 @@ function facetapi_collapsible_facetapi_widgets() {
  * Implements hook_theme_registry_alter().
  */
 function facetapi_collapsible_theme_registry_alter(&$theme_registry) {
-  $path = drupal_get_path('module', 'facetapi');
-  foreach (array('facetapi_title', 'facetapi_link_inactive', 'facetapi_link_active', 'facetapi_count') as $theme_func) {
-    // Only change the theme function if the original facetapi implementation is
-    // active. Otherwise theme overrides do not work.
-    if (!empty($theme_registry[$theme_func]) && $theme_registry[$theme_func]['theme path'] == $path) {
-      $theme_registry[$theme_func]['function'] = 'facetapi_collapsible_'. $theme_func;
-    }
+  // FacetAPI Collapsible only needs to inject or wrap these theming functions with additional markup.
+  // When replacing the theme funciton, we need to save the origial array and invoke the original theming
+  // function in ours. This allows compatibility with other modules and themes that have existing overrides.
+  foreach (array('facetapi_title', 'facetapi_link_inactive', 'facetapi_link_active') as $theme_function) {
+    $theme_registry['facetapi_collapsible_' . $theme_function . '_original'] = $theme_registry[$theme_function];
+    $theme_registry[$theme_function]['function'] = 'facetapi_collapsible_' . $theme_function;
   }
 }
 
 /**
- * Themes a facet title.
+ * Implements theme_facetapi_link_title().
  */
 function facetapi_collapsible_facetapi_title($variables) {
-  return drupal_strtolower(check_plain($variables['title']));
+  return theme('facetapi_collapsible_facetapi_title_original', $variables) . '<span class="toggle"></span>';
 }
 
 /**
- * Themes a facet link with an optional count.
+ * Implements theme_facetapi_link_inactive().
  */
 function facetapi_collapsible_facetapi_link_inactive($variables) {
-  $variables['text'] = trim($variables['text'], '"');
-  if (!empty($variables['count'])) {
-    $variables['options']['html'] = TRUE;
-    $variables['text'] .= ' ' . theme('facetapi_count', $variables);
-  }
-  return '<div class="facetapi-facet facetapi-inactive">'. theme_link($variables) .'</div>';
+  return '<div class="facetapi-facet facetapi-inactive">'. theme('facetapi_collapsible_facetapi_link_inactive_original', $variables) .'</div>';
 }
 
 /**
- * Themes the count for the facet item.  For example, this number shows how many
- * results will be returned after clicking on a link.
- */
-function facetapi_collapsible_facetapi_count($variables) {
-  return '<span class="count">' . check_plain($variables['count']) . '</span>';
-}
-
-/**
- * Themes a facet link for a value that is currently being searched.
+ * Implements theme_facetapi_link_active().
  */
 function facetapi_collapsible_facetapi_link_active($variables) {
-  $facet_text = '';
-  if (isset($variables['text'])) {
-    if (empty($variables['options']['html'])) {
-     $facet_text = check_plain(trim($variables['text'], '"'));
-    }
-    else {
-      $facet_text  = $variables['text'];
-    }
-  }
-  $variables['text'] = $facet_text . '<span class="remove">(-)</span>';
-  $variables['options']['html'] = TRUE;
-
-  return '<div class="facetapi-facet facetapi-active">' . theme_link($variables) . '</div>';
+  return '<div class="facetapi-facet facetapi-active">' . theme('facetapi_collapsible_facetapi_link_active_original', $variables) . '</div>';
 }
 
 /**
