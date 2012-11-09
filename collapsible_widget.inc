@@ -28,6 +28,9 @@ class FacetapiCollapsible extends FacetapiWidgetLinks {
       '#suffix' => '</div>',
       '#attributes' => array_merge_recursive($this->build['#attributes'], array('class' => array('facetapi-collapsible'))),
       '#attached' => array(
+        'library' => array(
+          array('system', 'jquery.cookie'),
+        ),
         'js' => array(
           drupal_get_path('module', 'facetapi_collapsible') .'/facetapi_collapsible.js',
           array('data' =>
