@@ -5,25 +5,25 @@
  * stopped working because of a parsing error.
  */
 
-.block.facetapi-collapsible .facet-collapsible-wrapper {
+.block.facetapi-collapsible .facet-collapsible-wrapper, .pane-block .facet-collapsible-wrapper {
   display: none;
 }
-.block.facetapi-collapsible.expanded .facet-collapsible-wrapper {
+.block.facetapi-collapsible.expanded .facet-collapsible-wrapper, .pane-block.expanded .facet-collapsible-wrapper {
   display: block;
 }
-.block.facetapi-collapsible ul.facetapi-collapsible ul {
+.block.facetapi-collapsible ul.facetapi-collapsible ul, .pane-block ul.facetapi-collapsible ul {
   display:none;
 }
-.block.facetapi-collapsible ul.facetapi-collapsible ul.expanded {
+.block.facetapi-collapsible ul.facetapi-collapsible ul.expanded, .pane-block ul.facetapi-collapsible ul.expanded {
   display:block
 }
 /**
  * FacetAPI Collapsible Block Titles & Toggle
  */
-.block.facetapi-collapsible h2.block-title {
+.block.facetapi-collapsible h2.block-title, .pane-block .block-title {
   cursor: pointer;
 }
-.block.facetapi-collapsible h2.block-title .toggle {
+.block.facetapi-collapsible h2.block-title .toggle, .pane-block .block-title .toggle {
   background: url(images/expand.png) no-repeat 0 0 transparent;
   display: block;
   float: right;
@@ -31,12 +31,12 @@
   margin-right: 5px;
   width: 10px;
 }
-.block.facetapi-collapsible.expanded h2.block-title .toggle {
+.block.facetapi-collapsible.expanded h2.block-title .toggle, .pane-block.expanded .block-title .toggle {
   background-image: url(images/collapse.png);
 }
-.block.facetapi-collapsible.expanded.active h2.block-title {
+.block.facetapi-collapsible.expanded.active h2.block-title, .pane-block.expanded.active .block-title {
   cursor: default;
 }
-.block.facetapi-collapsible.expanded.active h2.block-title .toggle {
+.block.facetapi-collapsible.expanded.active h2.block-title .toggle, .pane-block.expanded.active .block-title .toggle {
   display: none;
 }

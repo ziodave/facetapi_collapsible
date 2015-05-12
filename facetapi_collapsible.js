@@ -31,7 +31,7 @@
   Drupal.behaviors.facetapiCollapsible = {
     attach : function (context) {
       var i = 0;
-      $('.facetapi-collapsible').once(function () {
+      $('.facet-collapsible-wrapper').parent().parent().once(function () {
         var $facet = $(this);
         if ($('.facetapi-active', this).size() > 0) {
           $(this).addClass('expanded active');
@@ -40,7 +40,7 @@
           // Add the 'expanded' class to the facet if configured to do so.
           facetCollapseExpanded($facet, 'expand', 1, 'addClass');
 
-          $('h2', this).each(function () {
+          $(':first-child', this).each(function () {
             $(this).click(function () {
               $facet.siblings('.facetapi-collapsible:not(.active)').each(function () {
                 // Remove the 'expanded' class from all other facets that haven't
